@@ -11,8 +11,33 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+
+    <header class="header">
+  <div class="header__container">
+    <h1 class="header__logo">Закрывающий тег</h1>
+    <p class="header__description">&lt;HTML&gt; &lt;/HTML&gt;</p>
+  </div>
+</header>
+
+<main class="content">
+  <div class="cards">
+    <!-- 8 карточек, позже добавим -->
+  </div>
+</main>
+
     <script src="./scripts/like.js"></script>
+
+<dialog class="dialog">
+  <form method="dialog" class="dialog__form">
+    <div class="dialog__content">
+      <svg class="dialog__icon" width="39" height="39" viewBox="0 0 39 39">
+        <use href="./svg/floppy.svg#floppy"></use>
+      </svg>
+      <p class="dialog__text">Сохранить на память?</p>
+    </div>
+    <button class="dialog__button button__text">Ок</button>
+  </form>
+</dialog>
+
   </body>
 </html>
