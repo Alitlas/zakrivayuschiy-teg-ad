@@ -51,6 +51,15 @@
   margin-bottom: 20px;
 }
 
+.header__container {
+  padding: 100px 100px; 
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  display: inline-block;
+  border: 2px solid var(--accent-color);
+}
+
 .header__description {
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.6875rem + 0.9375vw, 1.25rem);
