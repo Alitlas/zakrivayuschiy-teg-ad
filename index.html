@@ -304,5 +304,22 @@
     </dialog>
 
     <script src="./scripts/like.js"></script>
+    <script>
+  const saveButton = document.querySelector('.save-button');
+  const dialog = document.querySelector('.dialog');
+  const dialogButton = document.querySelector('.dialog__button');
+
+  if (saveButton && dialog) {
+    saveButton.addEventListener('click', () => {
+      dialog.showModal();
+    });
+  }
+
+  if (dialogButton && dialog) {
+    dialogButton.addEventListener('click', () => {
+      dialog.close();
+    });
+  }
+</script>
   </body>
 </html>
