@@ -14,13 +14,10 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-color: var(--bg-color);
-  /* background-color: #fff; */
-  background-image: url('../images/background.jpg');
+  background-image: var(--bg-image);
+  background-size: 100% 960px;
   background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% auto;
-  /* background-size: cover;
-  background-attachment: fixed; */
+  background-position: top;
   font-family: var(--main-font);
   font-variation-settings: 'wght' var(--text-weight);
   color: var(--text-color);
@@ -29,11 +26,10 @@
   align-items: center;
   padding: 100px 0;
 }
-
 @media (width <= 375px) {
   .page {
-    padding: 50px 0;
-    background-size: 100% auto;
+    /* padding: 50px 0; */
+    background-size: 100% 667px;
   }
 }
 
@@ -119,6 +115,16 @@
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-transform: uppercase;
+
+  -webkit-text-stroke: 1px var(--label-border-color);
+  
+  text-shadow: 0 0 1px var(--label-border-color);
+}
+
+@supports (text-stroke: 1px black) or (-webkit-text-stroke: 1px black) {
+  .card__label {
+    text-shadow: none;
+  }
 }
 
 .card__content {
@@ -318,6 +324,9 @@
   align-items: center;
   justify-content: center;
 }
+/* .dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+} */
 
 .dialog:not([open]) {
   display: none;
