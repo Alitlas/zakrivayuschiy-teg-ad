@@ -331,3 +331,37 @@
 .dialog:not([open]) {
   display: none;
 }
+
+/* Фильтры для изображений */
+.filter-grayscale {
+  filter: grayscale(0.8);
+}
+
+.filter-blur {
+  filter: blur(2px);
+}
+
+.filter-sepia {
+  filter: sepia(0.7);
+}
+
+.filter-brightness {
+  filter: brightness(1.2);
+}
+
+.filter-contrast {
+  filter: contrast(1.5);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+
+.filter-invert {
+  filter: invert(0.6);
+}
+
+/* Множественный фильтр (хотя бы один такой) */
+.filter-multiple {
+  filter: contrast(1.2) brightness(1.1) saturate(1.3);
+}
