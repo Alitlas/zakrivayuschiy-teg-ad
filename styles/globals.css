@@ -47,25 +47,3 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
-
-.page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
-  background-size: cover;
-  background-attachment: fixed;
-  font-family: var(--main-font);
-  font-variation-settings: 'wght' var(--text-weight);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 0;
-}
-
-@media (width <= 375px) {
-  .page {
-    padding: 50px 0;
-  }
-}
