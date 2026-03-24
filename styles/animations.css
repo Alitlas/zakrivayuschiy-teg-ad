@@ -38,71 +38,85 @@
   }
 }
 
-/* Базовые переходы для сердца */
-.like-icon .core {
-  fill: none;
+/* Обязательно задаём точку трансформации по центру, 
+  чтобы сердце увеличивалось во все стороны, а не съезжало в угол 
+*/
+.heart {
+  transform-origin: center;
+}
+
+.sparks {
+  opacity: 0; /* Искры по умолчанию скрыты */
+}
+
+/* ===== БАЗОВЫЕ СОСТОЯНИЯ И ВОЗВРАТ (КОГДА КУРСОР УХОДИТ ИЛИ ЛАЙК СНИМАЕТСЯ) ===== */
+
+/* Возврат сердцевины: длительность 0.3s, задержка 0.03s (ждём пока потухнет основное тело) */
+.core {
+  fill: transparent;
+  transition: fill 0.3s linear 0.03s;
+}
+
+/* Возврат основного тела: длительность 0.3s, без задержки */
+.main-body {
+  fill: transparent;
   transition: fill 0.3s linear;
 }
 
-.like-icon .main-body {
-  fill: none;
-  transition: fill 0.3s linear 0.05s;
-}
-
-.like-icon .contour {
+/* Контур по умолчанию и возврат (снятие лайка): длительность 0.1s, линейно, без задержки */
+.contour {
   fill: var(--contour-color);
   transition: fill 0.1s linear;
 }
 
-/* Состояние hover */
+/* ===== СОСТОЯНИЕ HOVER ===== */
+
 .like-icon:hover .core {
   fill: var(--contour-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear; /* Меняется сразу */
 }
 
 .like-icon:hover .main-body {
   fill: var(--contour-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s; /* Меняется с задержкой 0.05s */
 }
 
-/* Состояние active (зажатая кнопка) */
+/* ===== СОСТОЯНИЕ ACTIVE (УДЕРЖАНИЕ КЛИКА) ===== */
+
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear; /* Меняется сразу */
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s; /* Меняется с задержкой 0.05s */
 }
 
-/* Состояние is-liked (клик) */
+/* ===== СОСТОЯНИЕ IS-LIKED (КЛИК / ЛАЙК ПОСТАВЛЕН) ===== */
+
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
+/* Контур перекрашивается самым последним, задержка 0.06s */
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.06s;
 }
 
+/* Анимация увеличения самого сердца (группы .heart) */
 .like-icon.is-liked .heart {
-  transform-origin: center;
-  animation: heart-scale 0.3s ease-in 0.1s 1 normal forwards;
+  animation: heart-scale 0.3s ease-in 0.1s;
 }
 
+/* Анимация вспышки искр */
 .like-icon.is-liked .sparks {
-  animation: sparks-visibility 0.3s ease-in 0.3s 1 normal forwards;
-}
-
-/* Убираем заливку с основного тела и сердцевины по умолчанию */
-.like-icon .core,
-.like-icon .main-body {
-  fill: none;
+  animation: sparks-visibility 0.3s ease-in 0.3s;
 }

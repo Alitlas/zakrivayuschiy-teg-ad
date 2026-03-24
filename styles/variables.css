@@ -22,7 +22,7 @@
   /* Размеры */
   --section-width: 696px;
   --header-padding: 100px 0;
-  --card-padding: 25px;
+  --card-padding: 3px;
 
   /* Фон */
   --bg-image: url('../images/background.jpg');
