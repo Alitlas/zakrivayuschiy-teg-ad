@@ -297,7 +297,7 @@
           <p class="dialog__text">Вставьте
 дискету, чтобы продолжить</p>
         </div>
-        <button type="button" class="dialog__button">
+        <button type="submit" class="dialog__button">
           <span class="button__text">Ок</span>
         </button>
       </form>
@@ -307,19 +307,10 @@
     <script>
   const saveButton = document.querySelector('.save-button');
   const dialog = document.querySelector('.dialog');
-  const dialogButton = document.querySelector('.dialog__button');
 
-  if (saveButton && dialog) {
-    saveButton.addEventListener('click', () => {
-      dialog.showModal();
-    });
-  }
-
-  if (dialogButton && dialog) {
-    dialogButton.addEventListener('click', () => {
-      dialog.close();
-    });
-  }
+  saveButton.addEventListener('click', () => {
+    dialog.showModal();
+  });
 </script>
   </body>
 </html>
