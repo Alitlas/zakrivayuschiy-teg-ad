@@ -53,20 +53,20 @@
 
 /* Возврат сердцевины: длительность 0.3s, задержка 0.03s (ждём пока потухнет основное тело) */
 .core {
-  fill: transparent;
+  /* fill: transparent; */
   transition: fill 0.3s linear 0.03s;
 }
 
 /* Возврат основного тела: длительность 0.3s, без задержки */
 .main-body {
-  fill: transparent;
+  /* fill: transparent; */
   transition: fill 0.3s linear;
 }
 
 /* Контур по умолчанию и возврат (снятие лайка): длительность 0.1s, линейно, без задержки */
 .contour {
-  fill: var(--contour-color);
-  transition: fill 0.1s linear;
+  /* fill: var(--contour-color); */
+  transition: fill 0.3s linear;
 }
 
 /* ===== СОСТОЯНИЕ HOVER ===== */
